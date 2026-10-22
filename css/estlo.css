@@ -1,0 +1,1442 @@
+/* =========================================
+       1. VARIABLES Y CONFIGURACIÓN GENERAL
+    ========================================= */
+
+    :root {
+      --vino: #35151f;
+      --vino-claro: #542331;
+      --dorado: #c9a66b;
+      --crema: #fffaf3;
+      --blanco: #ffffff;
+      --texto: #51434a;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Montserrat", Arial, sans-serif;
+      --radio: 18px;
+      --sombra: 0 12px 40px #35151f1a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      background: var(--vino);
+      color: var(--texto);
+      font-family: var(--sans);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select {
+      font: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 3px solid var(--dorado);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-light {
+      background: var(--blanco);
+    }
+
+    .section-dark {
+      background: var(--vino);
+      color: var(--crema);
+    }
+
+    .eyebrow {
+      color: var(--dorado);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 8px 0 16px;
+      color: var(--crema);
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 500;
+      line-height: 1.1;
+    }
+    .section--title {
+      margin: 8px 0 16px;
+      color: var(--vino);
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    .section-dark .section-title {
+      color: var(--crema);
+    }
+
+    .section-intro {
+      max-width: 650px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .divider {
+      width: 500px;
+      height: 2.5px;
+      margin: 25px auto;
+      background: var(--dorado);
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 23px;
+      border: 1px solid var(--dorado);
+      border-radius: 3px;
+      background: var(--dorado);
+      color: var(--vino);
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-align: center;
+      text-transform: uppercase;
+      transition: transform 0.25s, background 0.25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: var(--dorado);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--crema);
+    }
+
+    .btn-outline:hover {
+      color: var(--vino);
+    }
+
+    /* =========================================
+       2. BARRA DE NAVEGACIÓN
+    ========================================= */
+/* Configuración general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.brand {
+    display: block;
+    margin: 0 auto 12px;
+
+    color:var(--dorado);
+    text-decoration: none;
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: 3px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.brand:hover {
+    color:var(--dorado);
+    transform: scale(1.05);
+}
+
+/* Barra de navegación */
+
+.Barra {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+
+    background: var(--vino);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-bottom: 4px solid var(--dorado);
+
+    box-shadow:
+        0 5px 25px #0000002e,
+        0 1px 0 #ffffff08;
+
+    animation: aparecerBarra 0.8s ease both;
+}
+
+/* Contenedor */
+.Navegacion {
+    width: 100%;
+    max-width: 1250px;
+    min-height: 10px;
+    margin: auto;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Lista */
+.Navegacion ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    list-style: none;
+}
+
+/* Elementos */
+.Navegacion li {
+    position: relative;
+}
+
+/* Enlaces */
+.Navegacion a {
+    position: relative;
+    display: inline-block;
+    padding: 13px 12px;
+
+    color:var(--blanco);
+    text-decoration: none;
+    text-transform: uppercase;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 3px;
+
+    transition:
+        color 0.35s ease,
+        transform 0.35s ease;
+}
+
+/* Línea dorada */
+.Navegacion a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 1px;
+
+    width: 0;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #d4af37,
+        #fff0b3,
+        #d4af37,
+        transparent
+    );
+
+    transform: translateX(-50%);
+    transition: width 0.4s ease;
+}
+
+/* Efecto al pasar el cursor */
+.Navegacion a:hover {
+    color: #c9a66b;
+    transform: translateY(-2px);
+}
+
+.Navegacion a:hover::after {
+    width: 85%;
+}
+
+/* Efecto al hacer clic */
+.Navegacion a:active {
+    transform: scale(0.96);
+}
+
+/* Accesibilidad con teclado */
+.Navegacion a:focus-visible {
+    outline: 1px solid #d4af37;
+    outline-offset: 5px;
+}
+
+/* Animación inicial */
+@keyframes aparecerBarra {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Evitar que la barra tape las secciones */
+section[id] {
+    scroll-margin-top: 100px;
+}
+/* =========================================
+   CORRECCIONES PARA CELULARES
+========================================= */
+
+/* Evitar que la navegación tape el contenido */
+.Barra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 12px 12px;
+  background: var(--vino);
+}
+
+/* Logo */
+.brand {
+  margin: 0 auto 8px;
+  font-size: 38px;
+}
+
+/* Menú adaptable */
+.Navegacion {
+  width: 100%;
+  min-height: auto;
+  padding: 0;
+}
+
+.Navegacion ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px 12px;
+  list-style: none;
+}
+
+.Navegacion a {
+  font-family: var(--sans);
+  display: block;
+  padding: 8px 4px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+/* Reservar espacio para la barra fija */
+.hero {
+  padding-top: 125px;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* Evitar desbordamientos horizontales */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Ajustes para teléfonos */
+@media (max-width: 600px) {
+  .Barra {
+    padding: 6px 8px 8px;
+  }
+
+  .brand {
+    font-size: 30px;
+    margin-bottom: 4px;
+  }
+
+  .Navegacion ul {
+    gap: 0 7px;
+  }
+
+  .Navegacion a {
+    padding: 7px 3px;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+  }
+
+  .hero {
+    min-height: 100svh;
+    padding-top: 145px;
+  }
+
+  .hero::before {
+    inset: 8px;
+  }
+
+  .hero-content {
+    width: 88%;
+    padding: 35px 0;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-date {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+
+  .divider {
+    width: min(80%, 300px);
+  }
+
+  .section {
+    padding: 55px 0;
+  }
+
+  .countdown-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .gallery-item {
+    height: 210px;
+  }
+
+  .details-grid,
+  .locations-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .timeline-item {
+    grid-template-columns: 65px minmax(0, 1fr);
+    gap: 25px;
+  }
+
+  .timeline-item p {
+    font-size: 0.85rem;
+  }
+
+  .rsvp-wrap {
+    padding: 22px 15px;
+  }
+
+  .music-player {
+    right: 10px;
+    bottom: 10px;
+    max-width: calc(100% - 20px);
+  }
+}
+
+/* Teléfonos muy pequeños */
+@media (max-width: 360px) {
+  .Navegacion ul {
+    column-gap: 3px;
+  }
+
+  .Navegacion a {
+    font-size: 9px;
+    padding-inline: 2px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    padding-inline: 10px;
+  }
+
+  .gallery-item {
+    height: 170px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+    .Navegacion {
+        min-height: 70px;
+        padding: 10px 12px;
+    }
+
+    .Navegacion ul {
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .Navegacion a {
+        padding: 10px 8px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+}
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 480px) {
+    .Navegacion {
+        min-height: 64px;
+        padding: 8px 4px;
+    }
+
+    .Navegacion ul {
+        gap: 0;
+        row-gap: 2px;
+    }
+
+    .Navegacion a {
+        padding: 9px 6px;
+        font-size: 9px;
+        letter-spacing: 0.4px;
+    }
+
+    .Navegacion a::after {
+        bottom: 2px;
+    }
+}
+
+/* =========================================
+   MOVIMIENTO REDUCIDO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .Barra {
+        animation: none;
+    }
+
+    .Navegacion a,
+    .Navegacion a::after {
+        transition: none;
+    }
+}
+    .nav-content {
+      display: flex;
+      min-height: 70px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+
+   
+/* =========================================
+   3. PORTADA PRINCIPAL - XV AÑOS
+   Diseño elegante vino y dorado
+========================================= */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+
+  width: 100%;
+  min-height: min(850px, 92svh);
+  padding: 60px 20px;
+  overflow: hidden;
+
+  color: var(--crema);
+  text-align: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      #1e050f59 0%,
+      #2d091691 48%,
+      #230812d1 100%
+    ),
+    url("https://i.pinimg.com/736x/93/ef/f9/93eff9461f8cc875a95b03135d077ae6.jpg")
+    center 45% / cover no-repeat;
+}
+
+/* Marco dorado interior */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 18px;
+
+  border: 1px solid rgba(220, 184, 117, 0.9);
+  outline: 1px solid rgba(220, 184, 117, 0.25);
+  outline-offset: 5px;
+
+  pointer-events: none;
+}
+
+/* Brillo ambiental */
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 38%,
+      rgba(201, 166, 107, 0.13),
+      transparent 55%
+    );
+
+  pointer-events: none;
+}
+
+/* Contenido de la portada */
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+
+  width: min(800px, 100%);
+  padding: 45px 12px;
+
+  animation: heroEntrada 1.3s ease-out both;
+}
+
+/* Frase superior */
+
+.hero-subtitle {
+  margin: 0 0 24px;
+
+  color: var(--dorado);
+  font-family: var(--serif);
+  font-size: clamp(0.8rem, 2vw, 1.15rem);
+  font-weight: 400;
+  letter-spacing: clamp(2px, 0.6vw, 5px);
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+/* Nombre de la quinceañera */
+
+.hero h1 {
+  margin: 0;
+  color: var(--dorado);
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 8.5vw, 6.5rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -1px;
+
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+
+  text-shadow:
+    0 2px 2px rgba(0, 0, 0, 0.5),
+    0 0 24px rgba(201, 166, 107, 0.2);
+}
+
+/* Título XV años */
+
+.hero h2 {
+  margin: 22px 0 16px;
+
+  color: var(--crema);
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Separador decorativo */
+
+.hero .divider {
+  width: min(180px, 45%);
+  height: 1px;
+  margin: 25px auto;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--dorado),
+    transparent
+  );
+}
+
+/* Fecha */
+
+.hero-date {
+  margin: 24px 0 34px;
+
+  color: var(--blanco);
+  font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: clamp(1px, 0.35vw, 3px);
+  line-height: 1.9;
+}
+
+/* Botones */
+
+.hero .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* Estilos exclusivos de los botones de portada */
+
+.hero .hero-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+  padding: 13px 24px;
+
+  border: 1px solid var(--dorado);
+  border-radius: 50px;
+
+  background: var(--dorado);
+  color: var(--vino);
+
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    color 0.3s ease;
+}
+
+.hero .hero-actions .btn-outline {
+  background: rgba(35, 12, 21, 0.25);
+  color: var(--crema);
+}
+
+.hero .hero-actions .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22);
+  background: var(--dorado);
+  color: var(--vino);
+}
+
+.hero .hero-actions .btn-outline:hover {
+  background: var(--dorado);
+  color: var(--vino);
+}
+
+/* Animación de entrada */
+
+@keyframes heroEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Adaptación para teléfonos */
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 88svh;
+    padding: 45px 20px;
+    background-position: center center;
+  }
+
+  .hero::before {
+    inset: 12px;
+  }
+
+  .hero-content {
+    padding: 35px 8px;
+  }
+
+  .hero-subtitle {
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    line-height: 1.12;
+  }
+
+  .hero h2 {
+    margin: 18px 0;
+    letter-spacing: 2px;
+  }
+
+  .hero-date {
+    margin: 22px 0 28px;
+    letter-spacing: 1.5px;
+  }
+
+  .hero .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero .hero-actions .btn {
+    width: min(100%, 290px);
+    min-height: 48px;
+    padding: 13px 16px;
+  }
+}
+
+/* Respetar la preferencia de movimiento del usuario */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-content {
+    animation: none;
+  }
+
+  .hero .hero-actions .btn {
+    transition: none;
+  }
+}
+
+
+    /* =========================================
+       4. DEDICATORIA
+    ========================================= */
+    .dedication {
+      text-align: center;
+    }
+
+    .dedication-text {
+      text-align: justify;
+      max-width: 760px;
+      margin: 0 auto;
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+      line-height: 1.60;
+    }
+
+    .family {
+      margin-top: 28px;
+      font-size: 0.85rem;
+      line-height: 2;
+    }
+    #historia {
+  background: linear-gradient(135deg, var(--vino) 0%, var(--vino-claro) 100%);
+  color: var(--blanco);
+  }
+
+    /* =========================================
+       5. CUENTA REGRESIVA
+    ========================================= */
+    
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      max-width: 720px;
+      margin: 35px auto 0;
+    }
+    .inf{
+      color: var(--vino);
+    }
+    .info{
+      color: var(--dorado);
+      font-family: var(--serif);
+      font-size: 2rem;
+    }
+    .tex{
+      color:var(--vino)
+    }
+
+    .countdown-box {
+      padding: 1px 10px;
+      border: 2.5px solid var(--dorado);
+      background: var(--vino-claro);
+    }
+
+    .countdown-box strong {
+      display: block;
+      color: var(--dorado);
+      font-family: var(--serif);
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .countdown-box span {
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--crema);
+    }
+
+    #countdown-message {
+      font-size: 1.25rem;
+      margin-top: 25px;
+      color: var(--dorado);
+    }
+
+    #cuenta {
+  background: var(--blanco) !important;
+}
+    /* =========================================
+       6. UBICACIONES
+    ========================================= */
+    
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 30px;
+      border: 3px solid var(--dorado);
+      border-radius: 21px;
+    }
+
+    .location-card {
+      align-items: center;
+      overflow: hidden;
+      border-radius: var(--radio);
+      background: var(--blanco);
+      box-shadow: var(--sombra);
+    }
+
+    .location-image {
+      display: grid;
+      height: 300px;
+      place-items: center;
+      background:
+        linear-gradient(rgba(53, 21, 31, 0.4), rgba(53, 21, 31, 0.6)),
+        url("https://i.pinimg.com/1200x/86/1f/38/861f3826e8de4770c3fbd2217a6e3234.jpg")
+        center / cover;
+      color: var(--blanco);
+      font-family: var(--serif);
+      font-size: 2.4rem;
+    }
+    .location-body {
+      padding: 28px;
+    }
+
+    .location-body h3 {
+      margin-bottom: 12px;
+      color: var(--vino);
+      font-family: var(--serif);
+      font-size: 2rem;
+    }
+
+    .location-body p {
+      color: var(--vino);
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+    
+    .location-body .eyebrow{
+      color: var(--dorado);
+    }
+
+    .location-actions {
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .location-actions .btn {
+      flex: 1;
+      min-width: 130px;
+      padding-inline: 12px;
+      font-size: 0.68rem;
+    }
+
+    .location-actions .btn-outline-dark {
+      background: transparent;
+      color: var(--vino);
+    }
+
+    #ubicaciones {
+  background: linear-gradient(135deg, var(--vino) 0%, var(--vino-claro) 100%);
+  color: var(--blanco);
+  }
+
+    /* =========================================
+       7. ITINERARIO
+    ========================================= */
+    .timeline {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 104px;
+      width: 2px;
+      background: var(--dorado);
+      content: "";
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 85px 1fr;
+      gap: 40px;
+      padding: 0 0 34px;
+    }
+
+    .timeline-item::before {
+      position: absolute;
+      top: 8px;
+      left: 99px;
+      width: 11px;
+      height: 11px;
+      border: 2px solid var(--dorado);
+      border-radius: 50%;
+      background: var(--crema);
+      content: "";
+    }
+
+    .timeline-time {
+      color: var(--dorado);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .timeline-item h3 {
+      color: var(--vino);
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .timeline-item p {
+      margin-top: 6px;
+      font-size: 0.10rem;
+    }
+
+    /* =========================================
+       8. GALERÍA
+    ========================================= */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .gallery-item {
+      height: 320px;
+      overflow: hidden;
+      border: 0;
+      border-radius: 10px;
+      background: #eee;
+      cursor: zoom-in;
+      border: 3px solid var(--dorado);
+      border-radius: 21px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.07);
+    }
+
+    .lightbox {
+      position: fixed;
+      z-index: 500;
+      inset: 0;
+      display: grid;
+      padding: 25px;
+      place-items: center;
+      background: rgba(15, 8, 11, 0.94);
+    }
+
+    .lightbox[hidden] {
+      display: none;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: 95%;
+      max-height: 85svh;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      border: 0;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      font-size: 2.5rem;
+    }
+    #galeria {
+  background: linear-gradient(135deg, var(--vino) 0%, var(--vino-claro) 100%);
+  color: var(--blanco);
+  }
+
+    /* =========================================
+       9. VESTIMENTA Y REGALOS
+    ========================================= */
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .detail-card {
+      padding: 35px 28px;
+      border: 2px solid var(--dorado);
+      border-radius: var(--radio);
+      background: var(--crema);
+      text-align: center;
+    }
+
+    .detail-icon {
+      margin-bottom: 12px;
+      color: var(--dorado);
+      font-size: 2.3rem;
+    }
+
+    .detail-card h3 {
+      margin-bottom: 12px;
+      color: var(--vino);
+      font-family: var(--serif);
+      font-size: 2rem;
+    }
+
+    .detail-card p {
+      text-align:justify;
+      font-size: 0.9rem;
+    }
+    .detail-card .formal {
+      text-align: center;
+    }
+
+    .gift-note {
+      margin-top: 15px;
+      color: var(--texto);
+      font-size: 0.8rem !important;
+    }
+
+    /* =========================================
+       10. CONFIRMACIÓN DE ASISTENCIA
+    ========================================= */
+
+    .rsvp-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 38px;
+      border: 2px solid rgba(201, 166, 107, 0.5);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .rsvp-form {
+      display: grid;
+      gap: 18px;
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 8px;
+    }
+
+    .form-group label {
+      color: var(--crema);
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      min-height: 49px;
+      padding: 12px 14px;
+      border: 1.5px solid rgba(201, 166, 107, 0.5);
+      border-radius: 4px;
+      background: var(--crema);
+      color: var(--vino);
+    }
+
+    .rsvp-form .btn {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .form-note {
+      font-style: normal;
+      margin-top: 16px;
+      color:var(--blanco);
+      font-size: 0.75rem;
+      text-align: justify;
+    }
+
+    #confirmacion {
+  background: linear-gradient(135deg, var(--vino) 0%, var(--vino-claro) 100%);
+  color: var(--blanco);
+  }
+
+    /* =========================================
+       11. REPRODUCTOR DE MÚSICA
+    ========================================= */
+
+    .music-player {
+      position: fixed;
+      z-index: 200;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 15px;
+      border: 2px solid var(--dorado);
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--vino) 0%, var(--vino-claro) 100%);
+      color: var(--blanco);
+      color: var(--crema);
+      box-shadow: var(--sombra);
+    }
+
+    .music-player button {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      background: var(--dorado);
+      color: var(--vino);
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .music-label {
+      font-size: 0.7rem;
+    }
+
+    /* =========================================
+       12. PIE DE PÁGINA
+    ========================================= */
+
+    .footer {
+      padding: 45px 0;
+      background: #210c13;
+      color: var(--crema);
+      text-align: center;
+    }
+
+    .footer h2 {
+      color: var(--dorado);
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      font-weight: 400;
+    }
+
+    .footer p {
+      margin-top: 10px;
+      font-size: 0.78rem;
+    }
+
+    .footer a {
+      color: var(--dorado);
+    }
+
+    /* =========================================
+       13. ANIMACIONES AL DESPLAZARSE
+    ========================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* =========================================
+       14. DISEÑO RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 760px) {
+      .section {
+        padding: 65px 0;
+      }
+
+      .nav-content {
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        padding: 10px 0;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 12px;
+        font-size: 0.65rem;
+      }
+
+      .hero {
+        min-height: 760px;
+        min-height: 90svh;
+      }
+
+      .hero::before {
+        inset: 10px;
+      }
+
+      .hero-date {
+        font-size: 0.78rem;
+        letter-spacing: 1.5px;
+      }
+
+      .countdown-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .locations-grid,
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .gallery-item {
+        height: 230px;
+      }
+
+      .location-body {
+        padding: 22px;
+      }
+
+      .rsvp-wrap {
+        padding: 25px 18px;
+      }
+
+      .timeline {
+        max-width: 100%;
+      }
+
+      .timeline::before {
+        left: 77px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 60px 1fr;
+        gap: 35px;
+      }
+
+      .timeline-item::before {
+        left: 72px;
+      }
+
+      .timeline-time {
+        font-size: 0.72rem;
+      }
+
+      .music-player {
+        right: 12px;
+        bottom: 12px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .nav-links {
+        gap: 8px;
+      }
+
+      .gallery-item {
+        height: 180px;
+      }
+
+      .music-label {
+        display: none;
+      }
+    }

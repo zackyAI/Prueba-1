@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mis XV Años | Karyme vanesa</title>
+  <meta name="description"
+        content="Te invitamos a celebrar una noche mágica y especial: mis XV años.">
+  <meta name="theme-color" content="#35151f">
+
+  <!-- Fuentes -->
+  <link rel="preload" href="css/normalizar.css" as="styel">
+  <link rel="stylesheet" href="css/normalizar.css">
+  <link rel="preload" href="css/estlo.css" as="styel">
+  <link rel="stylesheet" href="css/estlo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- =======================================
+       NAVEGACIÓN
+  ======================================== -->
+
+  <nav class="navbar" aria-label="Navegación principal">
+    <div class="container nav-content">
+      <header class="Barra">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        K. ♡
+      </a>
+        <nav class="Navegacion">
+          <ul>
+            <li><a href="#historia">Mi Día</a></li>
+            <li><a href="#ubicaciones">Ubicaciones</a></li>
+            <li><a href="#itinerario">Itinerario</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#confirmacion">Confirmación</a></li>
+          </ul>
+        </nav>
+      </header>
+  </nav>
+
+  <main>
+
+    <!-- =====================================
+         PORTADA
+    ====================================== -->
+
+    <header class="hero" id="inicio">
+      <div class="hero-content">
+        <p class="hero-subtitle">Una noche para recordar</p>
+
+        <h1 id="hero-name">Karyme Vanesa</h1>
+
+        <h2>Mis XV Años</h2>
+
+        <div class="divider"></div>
+
+        <p class="hero-date" id="hero-date">
+          SÁBADO · 19 DE JUNIO · 2027
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="#historia">Descubrir invitación</a>
+
+          <a class="btn btn-outline" href="#confirmacion">
+            Confirmar asistencia
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- =====================================
+         DEDICATORIA
+    ====================================== -->
+
+    <section class="section section-light" id="historia">
+      <div class="container dedication reveal">
+        <p class="eyebrow">Un momento inolvidable</p>
+
+        <h2 class="section-title">Una nueva etapa comienza</h2>
+
+        <div class="divider"></div>
+
+        <p class="dedication-text">
+          "En el libro de mi vida, esta página brilla más que nunca. Gracias a Dios por regalarme estos XV años, a mis padres y hermanos por escribir conmigo cada capítulo, y a ustedes, por ser las sonrisas que adornan mis recuerdos llenos de amor, alegría y iluciones."
+        </p>
+
+        <div class="family">
+          <p>Con la bendición de Dios y el amor de mis padres</p>
+
+          <p>
+            <strong id="parents-names">
+              Ignacio Pérez Santos y Yeni Riveras
+            </strong>
+          </p>
+
+          <p id="godparents">
+            Y el cariño de mis padrinos
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================
+         CUENTA REGRESIVA
+    ====================================== -->
+
+    <section class="section section-dark" id="cuenta">
+      <div class="container center reveal">
+        <p class="eyebrow">El gran día se acerca</p>
+
+        <h2 class="section--title">Cuenta regresiva</h2>
+
+        <p class="tex">Espero compartir contigo esta fecha tan especial.</p>
+
+        <div class="countdown-grid" aria-label="Tiempo restante">
+          <div class="countdown-box">
+            <strong id="days">000</strong>
+            <span>Días</span>
+          </div>
+
+          <div class="countdown-box">
+            <strong id="hours">00</strong>
+            <span>Horas</span>
+          </div>
+
+          <div class="countdown-box">
+            <strong id="minutes">00</strong>
+            <span>Minutos</span>
+          </div>
+
+          <div class="countdown-box">
+            <strong id="seconds">00</strong>
+            <span>Segundos</span>
+          </div>
+        </div>
+
+        <p id="countdown-message" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- =====================================
+         UBICACIONES
+    ====================================== -->
+
+    <section class="section" id="ubicaciones">
+      <div class="container">
+        <div class="section-intro reveal">
+          <p class="eyebrow">Acompáñame</p>
+
+          <h2 class="section-title">¿Dónde nos vemos?</h2>
+
+          <p>
+            Aquí encontrarás los lugares donde compartiremos
+            este día tan especial.
+          </p>
+        </div>
+
+        <div class="locations-grid">
+
+          <!-- RECEPCIÓN -->
+
+          <article class="location-card reveal">
+            <div class="location-image">
+              Recepción
+            </div>
+
+            <div class="location-body">
+              <p class="eyebrow">La celebración</p>
+
+              <h3 id="venue-name">Salón Jardín Imperial</h3>
+
+              <p>
+                <strong>Fecha:</strong>
+                <span class="event-date-text">19 de junio de 2027</span>
+              </p>
+
+              <p>
+                <strong>Hora:</strong>
+                <span id="venue-time">19:00 h</span>
+              </p>
+
+              <p id="venue-address">
+                Dirección del salón, ciudad, estado.
+              </p>
+
+              <div class="location-actions">
+                <a class="btn" id="church-maps"
+                   href="https://maps.app.goo.gl/GGYEMcqboMdqryUp9"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  Google Maps
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================
+         ITINERARIO
+    ====================================== -->
+
+    <section class="section section-light" id="itinerario">
+      <div class="container">
+        <div class="section-intro reveal">
+          <p class="eyebrow">Programa del evento</p>
+
+          <h2 class="section--title">Momentos especiales</h2>
+
+          <p>
+            Estos son algunos de los momentos que compartiremos
+            durante la celebración.
+          </p>
+        </div>
+
+        <div class="timeline">
+
+          <article class="timeline-item reveal">
+            <time class="timeline-time">19:00 h</time>
+            <div>
+              <h3>Recepción de invitados</h3>
+              <p>Bienvenida a familiares y amigos.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <time class="timeline-time">20:00 h</time>
+            <div>
+              <h3>Entrada y vals</h3>
+              <p>Un instante mágico para recordar.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <time class="timeline-time">21:00 h</time>
+            <div>
+              <h3>Cena</h3>
+              <p>Una noche para disfrutar juntos.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <time class="timeline-time">22:00 h</time>
+            <div>
+              <h3>¡Que comience la fiesta!</h3>
+              <p>Música, baile y mucha diversión.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================
+         GALERÍA DE FOTOGRAFÍAS
+    ====================================== -->
+
+    <section class="section" id="galeria">
+      <div class="container">
+        <div class="section-intro reveal">
+          <p class="eyebrow">Mis recuerdos</p>
+
+          <h2 class="section-title">Un poquito de mí</h2>
+
+          <p>
+            Algunos momentos especiales que quiero compartir contigo.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+
+          <button class="gallery-item reveal"
+                  type="button"
+                  aria-label="Ampliar fotografía 1">
+            <img
+              src="https://i.pinimg.com/736x/fc/22/a5/fc22a52d55a48e5219b327e5d51e75f5.jpg"
+              alt="Retrato de una joven"
+              loading="lazy">
+          </button>
+
+          <button class="gallery-item reveal"
+                  type="button"
+                  aria-label="Ampliar fotografía 1">
+            <img
+              src="https://i.pinimg.com/736x/1e/e8/8b/1ee88b34b888e69d22dc29e6c17ff815.jpg"
+              alt="Retrato de una joven"
+              loading="lazy">
+          </button>
+
+          <button class="gallery-item reveal"
+                  type="button"
+                  aria-label="Ampliar fotografía 1">
+            <img
+              src="https://i.pinimg.com/736x/14/18/61/1418612ae13e4c468e2c0a033a04c729.jpg"
+              alt="Retrato de una joven"
+              loading="lazy">
+          </button>
+
+          <button class="gallery-item reveal"
+                  type="button"
+                  aria-label="Ampliar fotografía 1">
+            <img
+              src="https://i.pinimg.com/736x/b2/32/2b/b2322b5e133ccdec4dbe6952d2f24a19.jpg"
+              alt="Retrato de una joven"
+              loading="lazy">
+          </button>
+
+          <button class="gallery-item reveal"
+                  type="button"
+                  aria-label="Ampliar fotografía 1">
+            <img
+              src="https://i.pinimg.com/1200x/a7/f3/df/a7f3df148e464c791ff90aee0815a87a.jpg"
+              alt="Retrato de una joven"
+              loading="lazy">
+          </button>
+
+          <button class="gallery-item reveal"
+                  type="button"
+                  aria-label="Ampliar fotografía 1">
+            <img
+              src="https://i.pinimg.com/1200x/2a/f7/95/2af795008dde90e81273734ce4a1c337.jpg"
+              alt="Retrato de una joven"
+              loading="lazy">
+          </button>
+
+          <button class="gallery-item reveal"
+                  type="button"
+                  aria-label="Ampliar fotografía 1">
+            <img
+              src="https://i.pinimg.com/736x/8c/22/81/8c2281eae0b8ab2529439c541ae39b25.jpg"
+              alt="Retrato de una joven"
+              loading="lazy">
+          </button>
+
+          <button class="gallery-item reveal"
+                  type="button"
+                  aria-label="Ampliar fotografía 2">
+            <img
+              src="https://i.pinimg.com/736x/66/61/8b/66618babf28abb7afd2baa398e7add83.jpg"
+              alt="Retrato de moda"
+              loading="lazy">
+          </button>
+
+          <button class="gallery-item reveal"
+                  type="button"
+                  aria-label="Ampliar fotografía 3">
+            <img
+              src="https://i.pinimg.com/736x/59/e9/e9/59e9e9938bdd13757ca8e4b13b295121.jpg"
+              alt="Retrato al aire libre"
+              loading="lazy">
+          </button>
+
+          <button class="gallery-item reveal"
+                  type="button"
+                  aria-label="Ampliar fotografía 3">
+            <img
+              src="imagen/Img_1.jfif"
+              alt="Retrato al aire libre"
+              loading="lazy">
+          </button>
+
+          <button class="gallery-item reveal"
+                  type="button"
+                  aria-label="Ampliar fotografía 1">
+            <img
+              src="https://i.pinimg.com/736x/fc/22/a5/fc22a52d55a48e5219b327e5d51e75f5.jpg"
+              alt="Retrato de una joven"
+              loading="lazy">
+          </button>
+
+          <button class="gallery-item reveal"
+                  type="button"
+                  aria-label="Ampliar fotografía 1">
+            <img
+              src="https://i.pinimg.com/736x/1e/e8/8b/1ee88b34b888e69d22dc29e6c17ff815.jpg"
+              alt="Retrato de una joven"
+              loading="lazy">
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- VISOR DE FOTOS -->
+
+    <div class="lightbox" id="lightbox" hidden
+         role="dialog" aria-modal="true"
+         aria-label="Fotografía ampliada">
+      <button class="lightbox-close" id="lightbox-close"
+              type="button" aria-label="Cerrar fotografía">
+        &times;
+      </button>
+
+      <img id="lightbox-image" src="" alt="">
+    </div>
+
+    <!-- =====================================
+         CÓDIGO DE VESTIMENTA Y REGALOS
+    ====================================== -->
+
+    <section class="section section-light" id="detalles">
+      <div class="container">
+        <div class="section-intro reveal">
+          <p class="eyebrow">Detalles importantes</p>
+
+          <h2 class="section--title">Para tener en cuenta</h2>
+        </div>
+
+        <div class="details-grid">
+
+          <article class="detail-card reveal">
+            <div class="detail-icon" aria-hidden="true">✧</div>
+
+            <h3>Código de vestimenta</h3>
+
+            <p class="formal">
+              <strong id="dress-code">Formal elegante</strong>
+            </p>
+
+            <p id="dress-note">
+            Damas: vestido de noche o de cóctel elegante. Caballeros: traje, camisa formal y calzado elegante. Agradecemos su presencia y les invitamos a vestir acorde con esta ocasión tan especial. Por respeto a la quinceañera, se recomienda evitar el color de su vestido.
+            </p>
+          </article>
+
+          <article class="detail-card reveal">
+            <div class="detail-icon" aria-hidden="true">♡</div>
+
+            <h3>Mesa de regalos</h3>
+
+            <p id="gift-message">
+              Tu presencia es nuestro mejor regalo.
+              Si deseas tener un detalle, agradeceremos mucho
+              una lluvia de sobres.
+            </p>
+
+            <p class="gift-note" id="gift-extra">
+              Gracias por formar parte de este día inolvidable.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================
+         CONFIRMACIÓN DE ASISTENCIA
+    ====================================== -->
+
+    <section class="section section-dark" id="confirmacion">
+      <div class="container">
+        <div class="section-intro reveal">
+          <p class="eyebrow">Tu presencia es importante</p>
+
+          <h2 class="section-title">¿Nos acompañas?</h2>
+
+          <p>
+            Confirma tu asistencia para ayudarnos a preparar
+            una celebración inolvidable.
+          </p>
+        </div>
+
+        <div class="rsvp-wrap reveal">
+          <form class="rsvp-form" id="rsvp-form">
+
+            <div class="form-group">
+              <label for="guest-name">Nombre del invitado</label>
+              <input
+                id="guest-name"
+                name="guest-name"
+                type="text"
+                placeholder="Escribe tu nombre"
+                maxlength="100"
+                autocomplete="name"
+                required>
+            </div>
+
+            <div class="form-group">
+              <label for="attendance">¿Podrás acompañarnos?</label>
+              <select id="attendance" name="attendance" required>
+                <option value="Sí, asistiré">Sí, asistiré</option>
+                <option value="No podré asistir">No podré asistir</option>
+              </select>
+            </div>
+
+            <div class="form-group" id="guests-group">
+              <label for="guest-count">Número de personas</label>
+              <select id="guest-count" name="guest-count">
+                <option value="1">1 persona</option>
+                <option value="2">2 personas</option>
+                <option value="3">3 personas</option>
+                <option value="4">4 personas</option>
+                <option value="5">5 personas</option>
+              </select>
+            </div>
+
+            <button class="btn" type="submit">
+              Confirmar por WhatsApp
+            </button>
+
+          </form>
+
+          <p class="form-note">
+            Al enviar su mensaje por WhatsApp, su asistencia quedará confirmada. Será un honor contar con su presencia en este día tan especial.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =======================================
+       PIE DE PÁGINA
+  ======================================== -->
+
+  <footer class="footer">
+    <div class="container">
+      <h2 id="footer-name">Karime Vanesa</h2>
+
+      <div class="divider"></div>
+
+      <p>
+        Agradezco sinceramente el honor de contar con su presencia en uno de los momentos más especiales e inolvidables de mi vida.
+      </p>
+
+      <p id="footer-date">Mis XV Años · 2027</p>
+
+      <p>Con cariño y gratitud, Karyme Vanesa y familia</p>
+
+      <p style="margin-top: 25px;">
+        Hecho con amor ♡
+      </p>
+    </div>
+  </footer>
+
+  <!-- =======================================
+       REPRODUCTOR DE MÚSICA
+  ======================================== -->
+
+  <div class="music-player">
+    <button id="music-toggle" type="button"
+            aria-label="Reproducir música"
+            aria-pressed="false">
+      ▶
+    </button>
+
+    <span class="music-label" id="music-status">
+      Activar música
+    </span>
+
+    <audio id="background-music" loop preload="auto" autoplay>
+      <source  src="Musica/Mis_XV.mpeg" type="audio/mpeg">
+    </audio>
+  </div>
+  <script src="js/Javascript.js"></script>
+</body>
+</html>
